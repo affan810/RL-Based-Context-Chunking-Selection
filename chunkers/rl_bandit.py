@@ -46,6 +46,7 @@ class RLBanditChunker(BaseChunker):
             token_counts=[c.token_count for c in candidates],
             top_k=p.top_k,
         )
+        agent.save()
 
         selected = [candidates[i] for i in selected_indices]
         if p.preserve_order:
